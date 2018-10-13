@@ -4,7 +4,7 @@
       <v-layout column align-center>
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
+          &#8220;First, solve the Sujeitos. Then, write the code.&#8221;
           <footer>
             <small>
               <em>&mdash;John Johnson</em>
@@ -18,14 +18,11 @@
 
 <script>
 export default {
-  name: 'Pacientes',
-  props: {
-    msg: String
-  }
-}
+  name: "Sujeitos"
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
