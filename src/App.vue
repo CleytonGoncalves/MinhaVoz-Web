@@ -4,23 +4,23 @@
     <ToolbarDrawer />
 
     <v-content>
-      <router-view></router-view>
+      <router-view />
     </v-content>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2018 - FATA - IC - UFMT</span>
-    </v-footer>
+    <Footer />
 
   </v-app>
 </template>
 
 <script>
 import ToolbarDrawer from "./components/ToolbarDrawer";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
-    ToolbarDrawer
+    ToolbarDrawer,
+    Footer
   }
 };
 </script>
