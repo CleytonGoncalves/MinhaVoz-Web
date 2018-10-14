@@ -5,6 +5,7 @@
       <v-toolbar-title>Pacientes</v-toolbar-title>
       <v-divider class="mx-3" inset vertical></v-divider>
 
+      <!-- Dialog Novo Paciente -->
       <v-dialog v-model="dialog" max-width="500px">
         <v-btn slot="activator" color="primary" class="mb-2" id="btnNovo">Novo</v-btn>
         <v-card>
@@ -44,25 +45,26 @@
 
       <v-spacer />
 
-      <v-text-field v-model="search" append-icon="search" label="Buscar" single-line hide-details />
+      <v-text-field v-model="search" append-icon="search" label="Buscar nome" single-line hide-details />
 
     </v-toolbar>
 
-    <v-data-table :headers="headers" :items="desserts" :search="search" must-sort class="elevation-1">
+    <v-data-table :headers="headers" :items="items" :search="search" must-sort class="elevation-1">
       <template slot="items" slot-scope="props">
-        <td>{{ props.item.name }}</td>
-        <td class="text-xs-right">{{ props.item.calories }}</td>
-        <td class="text-xs-right">{{ props.item.fat }}</td>
-        <td class="text-xs-right">{{ props.item.carbs }}</td>
-        <td class="text-xs-right">{{ props.item.protein }}</td>
-        <td class="text-xs-right">{{ props.item.iron }}</td>
+        <td>
+          <v-flex xs4 sm2 md1>
+            <v-avatar size="56px" class="mt-1 mb-1">
+              <img v-if="props.item.imagemUrl" :src="`http://localhost:8090/${props.item.imagemUrl}`" :alt="`Foto d${props.item.sexo == 'M' ? 'o' : 'a'} ${props.item.nome}`">
+              <img v-else src="http://localhost:8090/capivara.jpg" alt="Sem foto">
+            </v-avatar>
+          </v-flex>
+        </td>
+        <td class="text-capitalize">{{ props.item.nome }}</td>
+        <td class="text-uppercase">{{ props.item.sexo }}</td>
+        <td>{{ props.item.fluxoPrancha }}</td>
         <td class="justify-center layout px-0">
-          <v-icon small class="mr-2" @click="editItem(props.item)">
-            edit
-          </v-icon>
-          <v-icon small @click="deleteItem(props.item)">
-            delete
-          </v-icon>
+          <v-icon medium class="mr-2" @click="editItem(props.item)">edit</v-icon>
+          <v-icon medium @click="deleteItem(props.item)">delete</v-icon>
         </td>
       </template>
     </v-data-table>
@@ -79,18 +81,22 @@ export default {
 
     headers: [
       {
-        text: "Dessert (100g serving)",
+        text: "Imagem",
         align: "left",
         sortable: false,
-        value: "name"
+        value: "imagem"
       },
-      { text: "Calories", value: "calories" },
-      { text: "Fat (g)", value: "fat" },
-      { text: "Carbs (g)", value: "carbs" },
-      { text: "Protein (g)", value: "protein" },
-      { text: "Actions", value: "name", sortable: false }
+      { text: "Nome", value: "nome" },
+      { text: "Sexo", value: "sexo" },
+      { text: "Fluxo", value: "fluxo" },
+      {
+        text: "Actions",
+        value: "name",
+        sortable: false,
+        align: "center"
+      }
     ],
-    desserts: [],
+    items: [],
     editedIndex: -1,
     editedItem: {
       name: "",
@@ -110,7 +116,7 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editedIndex === -1 ? "Novo" : "Editar";
     }
   },
 
@@ -126,76 +132,26 @@ export default {
 
   methods: {
     initialize() {
-      this.desserts = [
+      this.items = [
         {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0
+          id: 11,
+          imagemUrl: "menino7.jpg",
+          nome: "jon jones",
+          sexo: "M",
+          velocidadeVoz: 50,
+          velocidadeSelecao: 1000,
+          fluxoPrancha: "SUJEITO-VERBO-COMPLEMENTO",
+          falarCadaPalavraSeletor: false
         },
         {
-          name: "Ice cream sandwich",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3
-        },
-        {
-          name: "Gingerbread",
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0
-        },
-        {
-          name: "Lollipop",
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0
-        },
-        {
-          name: "Honeycomb",
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5
-        },
-        {
-          name: "Donut",
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9
-        },
-        {
-          name: "KitKat",
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7
+          id: 12,
+          imagemUrl: "menina.jpg",
+          nome: "Curie",
+          sexo: "F",
+          velocidadeVoz: 50,
+          velocidadeSelecao: 2000,
+          fluxoPrancha: "LIVRE",
+          falarCadaPalavraSeletor: true
         }
       ];
     },
