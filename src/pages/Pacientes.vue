@@ -11,7 +11,7 @@
           <NovoPacienteDialog :itemToEdit="itemToEdit" @clearEdited="clearEdited" />
           <v-spacer />
 
-          <v-text-field v-model="search" append-icon="search" label="Buscar nome" single-line hide-details />
+          <v-text-field id="searchField" v-model="search" append-icon="search" label="Buscar nome" single-line hide-details />
 
         </v-toolbar>
 
@@ -21,8 +21,8 @@
             <td>
               <v-flex xs4 sm2 md1>
                 <v-avatar size="56px" class="mt-1 mb-1">
-                  <img v-if="props.item.imagemUrl" :src="`http://localhost:8090/${props.item.imagemUrl}`" :alt="`Foto d${props.item.sexo == 'M' ? 'o' : 'a'} ${props.item.nome}`">
-                  <img v-else src="http://localhost:8090/capivara.jpg" alt="Sem foto">
+                  <img v-if="props.item.imagemUrl" :src="asLocalImg(props.item.imagemUrl)" :alt="`Foto d${props.item.sexo == 'M' ? 'o' : 'a'} ${props.item.nome}`">
+                  <img v-else :src="asLocalImg('test-pics/unknown-avatar.png')" alt="Sem foto">
                 </v-avatar>
               </v-flex>
             </td>
@@ -76,7 +76,7 @@ export default {
       items: [
         {
           id: 11,
-          imagemUrl: "menino7.jpg",
+          imagemUrl: "test-pics/boy-avatar.png",
           nome: "jon jones",
           sexo: "M",
           velocidadeVoz: 50,
@@ -86,7 +86,7 @@ export default {
         },
         {
           id: 12,
-          imagemUrl: "menina.jpg",
+          imagemUrl: "test-pics/girl-avatar.png",
           nome: "Curie",
           sexo: "F",
           velocidadeVoz: 50,
@@ -111,6 +111,10 @@ export default {
 
     clearEdited() {
       this.itemToEdit = {};
+    },
+
+    asLocalImg(url) {
+      return require('../assets/' + url)
     }
   }
 };
