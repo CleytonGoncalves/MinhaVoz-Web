@@ -1,0 +1,158 @@
+[
+  {
+    "id": 11,
+    "nome": "jon jones",
+    "sexo": "M",
+    "imagemUrl": "menino7.jpg",
+    "velocidadeVoz": 50,
+    "velocidadeSelecao": 1000,
+    "fluxoPrancha": "SUJEITO-VERBO-COMPLEMENTO",
+    "falarCadaPalavraSeletor": false,
+    "sujeitos": [
+      {
+        "id": 2,
+        "palavra": "ELA",
+        "url": "ela.jpg",
+        "sexo": "M",
+        "pronome": "VOCE"
+      },
+      {
+        "id": 1,
+        "palavra": "EU",
+        "url": "eu1.jpg",
+        "sexo": "M",
+        "pronome": "EU"
+      },
+      {
+        "id": 4,
+        "palavra": "VOCÊ",
+        "url": "voce1.jpg",
+        "sexo": "F",
+        "pronome": "VOCE"
+      },
+      {
+        "id": 5,
+        "palavra": "NÓS",
+        "url": "nos1.jpg",
+        "sexo": "M",
+        "pronome": "NOS"
+      },
+      {
+        "id": 3,
+        "palavra": "EU",
+        "url": "eu menina.jpg",
+        "sexo": "F",
+        "pronome": "EU"
+      }
+    ],
+    "verbos": [
+      {
+        "id": 7,
+        "palavra": "BEBER",
+        "url": "beber.jpg",
+        "presenteEu": "BEBO",
+        "presenteVoce": "BEBE",
+        "presenteNos": "BEBEMOS",
+        "passadoEu": "BEBI",
+        "passadoVoce": "BEBEU",
+        "passadoNos": "BEBEMOS",
+        "futuroEu": "BEBEREI",
+        "futuroVoce": "BEBERÁ",
+        "futuroNos": "BEBEREMOS"
+      },
+      {
+        "id": 6,
+        "palavra": "ABRAÇAR",
+        "url": "abracar2.jpg",
+        "presenteEu": "abraço",
+        "presenteVoce": "abraça",
+        "presenteNos": "abraçamos",
+        "passadoEu": "abracei",
+        "passadoVoce": "abraçou",
+        "passadoNos": "abraçamos",
+        "futuroEu": "abraçarei",
+        "futuroVoce": "abraçará",
+        "futuroNos": "abraçaremos"
+      }
+    ],
+    "complementos": [
+      {
+        "id": 9,
+        "palavra": "PAI",
+        "url": "pai3.jpg",
+        "sexo": "M"
+      },
+      {
+        "id": 8,
+        "palavra": "ÁGUA",
+        "url": "agua_copo.jpg",
+        "sexo": "F"
+      },
+      {
+        "id": 10,
+        "palavra": "MÃE",
+        "url": "mulher4.jpg",
+        "sexo": "F"
+      }
+    ],
+    "diversos": []
+  },
+  {
+    "id": 12,
+    "nome": "Curie",
+    "sexo": "F",
+    "imagemUrl": "menina.jpg",
+    "velocidadeVoz": 50,
+    "velocidadeSelecao": 2000,
+    "fluxoPrancha": "LIVRE",
+    "falarCadaPalavraSeletor": true,
+    "sujeitos": [
+      {
+        "id": 2,
+        "palavra": "ELA",
+        "url": "ela.jpg",
+        "sexo": "M",
+        "pronome": "VOCE"
+      },
+      {
+        "id": 1,
+        "palavra": "EU",
+        "url": "eu1.jpg",
+        "sexo": "M",
+        "pronome": "EU"
+      },
+      {
+        "id": 3,
+        "palavra": "EU",
+        "url": "eu menina.jpg",
+        "sexo": "F",
+        "pronome": "EU"
+      }
+    ],
+    "verbos": [
+      {
+        "id": 6,
+        "palavra": "ABRAÇAR",
+        "url": "abracar2.jpg",
+        "presenteEu": "abraço",
+        "presenteVoce": "abraça",
+        "presenteNos": "abraçamos",
+        "passadoEu": "abracei",
+        "passadoVoce": "abraçou",
+        "passadoNos": "abraçamos",
+        "futuroEu": "abraçarei",
+        "futuroVoce": "abraçará",
+        "futuroNos": "abraçaremos"
+      }
+    ],
+    "complementos": [
+      {
+        "id": 10,
+        "palavra": "MÃE",
+        "url": "mulher4.jpg",
+        "sexo": "F"
+      }
+    ],
+    "diversos": []
+  }
+]
