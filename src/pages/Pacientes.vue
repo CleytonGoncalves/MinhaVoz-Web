@@ -46,6 +46,7 @@
 
 <script>
 import NovoPacienteDialog from "../components/NovoPacienteDialog";
+import PacientesTestJson from "../../pacientes.json";
 
 export default {
   name: "Pacientes",
@@ -73,28 +74,7 @@ export default {
           align: "center"
         }
       ],
-      items: [
-        {
-          id: 11,
-          imagemUrl: "test-pics/boy-avatar.png",
-          nome: "jon jones",
-          sexo: "M",
-          velocidadeVoz: 50,
-          velocidadeSelecao: 1000,
-          fluxoPrancha: "SUJEITO-VERBO-COMPLEMENTO",
-          falarCadaPalavraSeletor: false
-        },
-        {
-          id: 12,
-          imagemUrl: "test-pics/girl-avatar.png",
-          nome: "Curie",
-          sexo: "F",
-          velocidadeVoz: 50,
-          velocidadeSelecao: 2000,
-          fluxoPrancha: "LIVRE",
-          falarCadaPalavraSeletor: true
-        }
-      ]
+      items: PacientesTestJson
     };
   },
 
